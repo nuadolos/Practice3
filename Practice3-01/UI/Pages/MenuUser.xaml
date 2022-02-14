@@ -1,0 +1,36 @@
+﻿<Page x:Class="Practice3_01.UI.Pages.MenuUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Practice3_01.UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="800"
+      Title="Меню">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="WelcomeBlock"
+                   FontSize="24" Margin="10"/>
+
+        <StackPanel Grid.Row="1"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel x:Name="AdministratorMenu">
+                <Button Content="Учетные записи"
+                    x:Name="DataUserView" Click="DataUserView_Click"/>
+                <Button Height="50"
+                    x:Name="RegistrationBtn" Click="RegistrationBtn_Click">
+                    <Button.Content>
+                        <TextBlock>Регистрация<LineBreak/>пользователя</TextBlock>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+            <Button Content="Выход"
+                    x:Name="ExitBtn" Click="ExitBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
