@@ -19,7 +19,8 @@
 
         <StackPanel Grid.Row="1"
                     HorizontalAlignment="Center" VerticalAlignment="Center">
-            <StackPanel x:Name="AdministratorMenu">
+            <StackPanel Visibility="Collapsed"
+                        x:Name="AdministratorMenu">
                 <Button Content="Учетные записи"
                     x:Name="DataUserView" Click="DataUserView_Click"/>
                 <Button Height="50"

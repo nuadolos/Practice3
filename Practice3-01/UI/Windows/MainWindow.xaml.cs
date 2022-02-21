@@ -22,6 +22,8 @@ namespace Practice3_01
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Конструктор окна MainWindow
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +32,15 @@ namespace Practice3_01
             Transition.MainFrame = MainFrame;
         }
 
+        #endregion
+
+        #region Навигация по страницам в обратном направлении
+
+        /// <summary>
+        /// Проверка возможности перехода на предыдущую страницу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
             if (Transition.MainFrame.CanGoBack && !Transition.MainFrame.Content.ToString().Contains("MenuUser"))
@@ -38,9 +49,16 @@ namespace Practice3_01
                 BackBtn.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Переход на предыдущую страницу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
             Transition.MainFrame.GoBack();
         }
+
+        #endregion
     }
 }

@@ -22,12 +22,15 @@ namespace Practice3_01.UI.Pages
     /// </summary>
     public partial class Authorization : Page
     {
+        #region Закрытые поля страницы Authorization
+
         private int tryEntry;
         private TimerUpdate timer;
 
-        /// <summary>
-        /// Конструктор страницы Authorization
-        /// </summary>
+        #endregion
+
+        #region Конструктор страницы Authorization
+
         public Authorization()
         {
             InitializeComponent();
@@ -37,6 +40,8 @@ namespace Practice3_01.UI.Pages
 
             tryEntry = 3;
         }
+
+        #endregion
 
         #region Авторизация пользователя
 
@@ -106,14 +111,13 @@ namespace Practice3_01.UI.Pages
 
         #endregion
 
-        /// <summary>
-        /// Закрытие приложения
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #region Закрытие приложения
+
         private void CloseAppBtn_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
+
+        #endregion
     }
 }

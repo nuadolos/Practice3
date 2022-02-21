@@ -22,7 +22,13 @@ namespace Practice3_01.UI.Pages
     /// </summary>
     public partial class Registration : Page
     {
+        #region Закрытые поля страницы Registration
+
         private User createUser;
+
+        #endregion
+
+        #region Конструктор страницы Registration
 
         public Registration()
         {
@@ -34,6 +40,10 @@ namespace Practice3_01.UI.Pages
 
             DataContext = createUser;
         }
+
+        #endregion
+
+        #region Создание новой учетной записи
 
         private void SaveUserBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -73,6 +83,15 @@ namespace Practice3_01.UI.Pages
             }
         }
 
+        #endregion
+
+        #region Визуальная подсказка для пользователя
+
+        /// <summary>
+        /// Отображение подсказки при введенном пароле
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PasTBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (PasTBox.Text.Length > 5)
@@ -85,6 +104,10 @@ namespace Practice3_01.UI.Pages
                 PasTBox.BorderBrush = Brushes.Red;
                 PasTBox.ToolTip = "Пароль должен быть не менее 6 символов";
             }
+
+            PasTBox.Focus();
         }
+
+        #endregion
     }
 }

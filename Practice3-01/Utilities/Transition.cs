@@ -8,11 +8,22 @@ using System.Windows.Controls;
 
 namespace Practice3_01.Utilities
 {
+    /// <summary>
+    /// Класс Transition управляет элементом управления Frame для навигации страниц,
+    /// а также осуществляет взаимодействие с подключенной базой данных
+    /// </summary>
     static class Transition
     {
+        /// <summary>
+        /// Свойство MainFrame предзначено для навигации страниц
+        /// </summary>
         public static Frame MainFrame { get; set; }
 
+
         private static ManufactureDBEntities context;
+        /// <summary>
+        /// Свойство Context, через которое происходит взаимодействие с базой данных
+        /// </summary>
         public static ManufactureDBEntities Context
         {
             get

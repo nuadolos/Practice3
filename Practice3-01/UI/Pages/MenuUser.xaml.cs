@@ -22,7 +22,13 @@ namespace Practice3_01.UI.Pages
     /// </summary>
     public partial class MenuUser : Page
     {
+        #region Закрытые поля страницы MenuUser
+
         private User menuUser;
+
+        #endregion
+
+        #region Конструктор страницы MenuUser
 
         public MenuUser(User transferUser)
         {
@@ -33,26 +39,44 @@ namespace Practice3_01.UI.Pages
             WelcomeBlock.Text = $"Добро пожаловать, {menuUser?.Fullname}!";
 
             this.Title = $"Меню {menuUser?.Role.Name}";
+
+            switch (menuUser.RoleId)
+            {
+                case 1:
+                    break;
+                case 2:
+                    AdministratorMenu.Visibility = Visibility.Visible;
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
         }
 
-        /// <summary>
-        /// Переход на страницу Registration, служабщая для регистрации новых пользователей
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #endregion
+
+        #region Переход на страницу Registration, служабщая для регистрации новых пользователей
+
         private void RegistrationBtn_Click(object sender, RoutedEventArgs e)
         {
             Transition.MainFrame.Navigate(new Registration());
         }
+
+        #endregion
 
         private void DataUserView_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
+        #region Обратный переход на страницу авторизации
+
         private void ExitBtn_Click(object sender, RoutedEventArgs e)
         {
             Transition.MainFrame.GoBack();
         }
+
+        #endregion
     }
 }
